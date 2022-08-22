@@ -24,5 +24,6 @@ namespace Application.Features.someFeature.Rules
             IPaginate<SomeFeatureEntity> result = await _someFeatureEntityRepository.GetListAsync(b => b.Name == name);
             if (result.Items.Any()) throw new BusinessException("SomeFeatureEntity name exists.");
         }
+
     }
 }

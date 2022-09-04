@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Application.Features.Brands.Dtos;
 using Domain.Entities;
 using Application.Features.Brands.Commands.CreateBrand;
+using Application.Features.Brands.Models;
+using Core.Persistence.Paging;
 
 namespace Application.Features.Brands.Profiles
 {
@@ -16,6 +18,7 @@ namespace Application.Features.Brands.Profiles
         {
             CreateMap<Brand, CreatedBrandDto>().ReverseMap();
             CreateMap<Brand, CreateBrandCommand>().ReverseMap();
+            CreateMap<IPaginate<Brand>, BrandListModel>().ReverseMap();
         }
     }
 }

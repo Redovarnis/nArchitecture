@@ -31,10 +31,7 @@ namespace Application.Features.Brands.Commands.CreateBrand
 
             public async Task<CreatedBrandDto> Handle(CreateBrandCommand request, CancellationToken cancellationToken)
             {
-                var test = "test variable 1";
                 await _brandBusinessRules.BrandNameCanNotBeDuplicatedWhenInserted(request.Name);
-
-                var test = "test variable 2";
 
                 Brand mappedBrand = _mapper.Map<Brand>(request);
                 Brand createdBrand = await _brandRepository.AddAsync(mappedBrand);
